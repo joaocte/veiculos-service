@@ -3,7 +3,7 @@ micronaut:
     name: veiculosService
 datasources:
   default:
-    url: jdbc:mysql://localhost:3306/db
+    url: jdbc:mysql://localhost:3306/veiculos
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: ''
