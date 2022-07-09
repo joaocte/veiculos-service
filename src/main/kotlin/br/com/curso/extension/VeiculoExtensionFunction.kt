@@ -5,7 +5,6 @@ import br.com.curso.application.`in`.ObterVeiculoPorIdQuery
 import br.com.curso.application.out.CadastrarVeiculoCommandResponse
 import br.com.curso.application.out.VeiculoQueryResponse
 import br.com.curso.controller.request.CadastrarVeiculoRequest
-import br.com.curso.controller.request.ObterVeiculoPorIdRequest
 import br.com.curso.controller.response.CadastrarVeiculoResponse
 import br.com.curso.controller.response.VeiculoResponse
 import br.com.curso.domain.Veiculo
@@ -26,13 +25,22 @@ fun CadastrarVeiculoRequest.toCommand() : CadastrarVeiculoCommand{
     return CadastrarVeiculoCommand(this.modelo, this.marca, this.anoFabricacao, this.anoModelo, this.placa)
 }
 
-fun ObterVeiculoPorIdRequest.toQuery() : ObterVeiculoPorIdQuery {
-    return ObterVeiculoPorIdQuery(this.id)
-}
 
 fun CadastrarVeiculoCommandResponse.toResponse() : CadastrarVeiculoResponse{
     return CadastrarVeiculoResponse(this.id)
 }
 fun VeiculoQueryResponse.toResponse() : VeiculoResponse{
     return VeiculoResponse(this.id, this.modelo, this.marca, this.anoFabricacao, this.anoModelo, this.placa)
+}
+
+fun VeiculoModel.toCommandResponse() : CadastrarVeiculoCommandResponse{
+    return CadastrarVeiculoCommandResponse(this.id!!)
+}
+
+fun VeiculoModel.toQueryResponse() : VeiculoQueryResponse{
+    return VeiculoQueryResponse(this.id!!, this.modelo, this.marca, this.anoFabricacao, this.anoModelo, this.placa )
+}
+
+fun Long.toQuery(): ObterVeiculoPorIdQuery {
+    return  ObterVeiculoPorIdQuery(this)
 }

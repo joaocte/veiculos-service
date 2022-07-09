@@ -5,4 +5,6 @@ import io.micronaut.data.annotation.Repository
 import io.micronaut.data.jpa.repository.JpaRepository
 
 @Repository
-interface IVeiculoRepository : JpaRepository<VeiculoModel, Long>
+interface IVeiculoRepository : JpaRepository<VeiculoModel, Long>{
+    fun existsByPlaca(placa : String) : Boolean
+}
