@@ -1,9 +1,12 @@
 micronaut:
   application:
     name: veiculosService
+  server:
+    port: -1
 datasources:
   default:
-    url: jdbc:mysql://myapp-mysql:3306/veiculos
+    #url: jdbc:mysql://myapp-mysql:3306/veiculos
+    url: jdbc:mysql://localhost:3306/veiculos
     driverClassName: com.mysql.cj.jdbc.Driver
     username: root
     password: root
@@ -27,3 +30,9 @@ jpa:
           auto: update
         show_sql: true
         format_sql: true
+
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "localhost:8500"

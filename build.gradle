@@ -26,6 +26,7 @@ dependencies {
     implementation("jakarta.annotation:jakarta.annotation-api")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
+    implementation("io.micronaut.discovery:micronaut-discovery-client")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("mysql:mysql-connector-java")
     testImplementation("org.testcontainers:junit-jupiter")
